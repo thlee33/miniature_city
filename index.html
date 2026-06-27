@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Miniature City - Cesium Photorealistic 3D Tiles</title>
+    <link
+      rel="stylesheet"
+      href="https://cesium.com/downloads/cesiumjs/releases/1.142/Build/Cesium/Widgets/widgets.css"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main id="app">
+      <section id="viewport" aria-label="Miniature city viewport">
+        <div id="cesiumContainer" class="viewer-panel is-active"></div>
+        <div class="toy-light" aria-hidden="true"></div>
+        <div class="tilt-shift-mask" aria-hidden="true"></div>
+        <div class="grain" aria-hidden="true"></div>
+      </section>
+
+      <aside class="control-surface" id="controlSurface">
+        <div class="brand-row">
+          <div>
+            <p class="eyebrow">Miniature City</p>
+            <h1 id="cityTitle">서울 남산과 강북 도심</h1>
+          </div>
+          <button id="cleanCaptureButton" class="icon-button" type="button" title="Clean capture">◎</button>
+        </div>
+
+        <label class="field">
+          <span>도시</span>
+          <select id="citySelect"></select>
+        </label>
+
+        <p id="statusText" class="status-text">Google Photorealistic 3D Tiles 로딩 중</p>
+      </aside>
+
+      <details class="miniature-controls">
+        <summary>Miniature Controls</summary>
+        <label>
+          <span>광각 FOV</span>
+          <input id="fovControl" type="range" min="55" max="95" step="1" />
+        </label>
+        <label>
+          <span>가장자리 blur</span>
+          <input id="blurControl" type="range" min="0" max="1.8" step="0.05" />
+        </label>
+        <label>
+          <span>채도</span>
+          <input id="saturationControl" type="range" min="0.8" max="1.65" step="0.01" />
+        </label>
+        <label>
+          <span>밝기</span>
+          <input id="brightnessControl" type="range" min="0.85" max="1.35" step="0.01" />
+        </label>
+        <label>
+          <span>장난감 조명</span>
+          <input id="toyLightControl" type="range" min="0" max="0.4" step="0.01" />
+        </label>
+        <label>
+          <span>해상도</span>
+          <input id="resolutionControl" type="range" min="0.8" max="1.2" step="0.05" />
+        </label>
+        <label class="check-row">
+          <input id="lensControl" type="checkbox" />
+          <span>CSS lens</span>
+        </label>
+        <label class="check-row">
+          <input id="orbitControl" type="checkbox" />
+          <span>auto orbit</span>
+        </label>
+      </details>
+
+      <button id="restoreUiButton" class="icon-button restore-ui-button" type="button" title="Show controls" hidden>↩</button>
+    </main>
+
+    <script src="https://cesium.com/downloads/cesiumjs/releases/1.142/Build/Cesium/Cesium.js"></script>
+    <script src="./config.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
